@@ -1,4 +1,15 @@
 # :coin: Full Stack Bank :dollar:
+This application provides:
+
+- Language options (English and Portuguese).
+- Information about developed skills.
+- Methodologies and paradigms used.
+- Technology stacks including TypeScript, React.js, Next.js, Sass, Cypress, Testing Library, Node.js, Express.js, Sequelize.js, PostgreSQL, Swagger UI, Mocha.js, Chai.js, Sinon.js, Docker, and Docker Compose.
+- Installation and execution instructions.
+- API documentation.
+- Integration and end-to-end testing details with Cypress.
+- Screenshots of the mobile login and dashboard interfaces.
+
 
 ![Preview](./screenshots/login.png)
 
