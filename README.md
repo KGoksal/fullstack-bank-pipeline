@@ -1,16 +1,3 @@
-# :coin: Full Stack Bank :
-
-## This application provides:
-
-- Language options (English and Portuguese).
-- Information about developed skills.
-- Methodologies and paradigms used.
-- Technology stacks including TypeScript, React.js, Next.js, Sass, Cypress, Testing Library, Node.js, Express.js, Sequelize.js, PostgreSQL, Swagger UI, Mocha.js, Chai.js, Sinon.js, Docker, and Docker Compose.
-- Installation and execution instructions.
-- API documentation.
-- Integration and end-to-end testing details with Cypress.
-- Screenshots of the mobile login and dashboard interfaces.
-
 
 # About JenkinsFile
 
@@ -74,6 +61,20 @@ This Jenkinsfile provides a comprehensive automation pipeline for building, test
 ********************************************************************************************************
                                                          ***
 ********************************************************************************************************
+
+# :coin: Full Stack Bank :
+
+## This application provides:
+
+- Language options (English and Portuguese).
+- Information about developed skills.
+- Methodologies and paradigms used.
+- Technology stacks including TypeScript, React.js, Next.js, Sass, Cypress, Testing Library, Node.js, Express.js, Sequelize.js, PostgreSQL, Swagger UI, Mocha.js, Chai.js, Sinon.js, Docker, and Docker Compose.
+- Installation and execution instructions.
+- API documentation.
+- Integration and end-to-end testing details with Cypress.
+- Screenshots of the mobile login and dashboard interfaces.
+
 
 
 
