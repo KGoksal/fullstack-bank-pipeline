@@ -1,5 +1,6 @@
-# :coin: Full Stack Bank :dollar:
-This application provides:
+# :coin: Full Stack Bank :
+
+## This application provides:
 
 - Language options (English and Portuguese).
 - Information about developed skills.
@@ -9,6 +10,71 @@ This application provides:
 - API documentation.
 - Integration and end-to-end testing details with Cypress.
 - Screenshots of the mobile login and dashboard interfaces.
+
+
+# About JenkinsFile
+
+This Jenkinsfile defines a pipeline that automates the build, testing, and deployment processes for a full-stack application called "Bank". Let's break down what each part of the Jenkinsfile does:
+
+### Pipeline Structure
+
+- **Agent:** `agent any` specifies that the pipeline can execute on any available agent in the Jenkins environment.
+
+- **Tools:** Defines tools needed for the pipeline:
+  - `jdk 'jdk17'`: Specifies JDK version 17 for Java development.
+  - `nodejs 'node16'`: Specifies Node.js version 16 for JavaScript/Node.js development.
+
+- **Environment:** Sets up environment variables:
+  - `SCANNER_HOME`: Assigns the path to the SonarQube scanner tool configured in Jenkins (`sonar-scanner`).
+
+### Stages
+
+1. **Git Checkout:**
+   - Clones the Git repository located at `https://github.com/raphaelalmeidamartins/fullstack-bank.git` into the Jenkins workspace.
+
+2. **OWASP Dependency Check:**
+   - Uses the OWASP Dependency Check plugin (`dependencyCheck`) to scan dependencies for known vulnerabilities.
+
+3. **Trivy Filesystem Scan:**
+   - Executes a vulnerability scan using Trivy on the project's filesystem (`trivy fs .`).
+
+4. **SonarQube Analysis:**
+   - Runs a SonarQube analysis on the project:
+     - Sets up SonarQube environment (`withSonarQubeEnv('sonar')`).
+     - Executes SonarQube scanner (`${SCANNER_HOME}/bin/sonar-scanner`) with specific project configurations (`-Dsonar.projectName=Bank -Dsonar.projectKey=Bank`).
+
+5. **Installed Dependencies:**
+   - Installs npm dependencies for the project.
+
+6. **Backend:**
+   - Navigates to the backend directory (`/root/.jenkins/workspace/Bank/app/backend`) and installs npm dependencies.
+
+7. **Frontend:**
+   - Navigates to the frontend directory (`/root/.jenkins/workspace/Bank/app/frontend`) and installs npm dependencies.
+
+8. **Deploy to Container:**
+   - Deploys the application to a container using `npm run compose:up -d`, which likely uses Docker Compose (`compose:up`) to bring up containers in detached mode (`-d`).
+
+### Explanation
+
+- This Jenkinsfile automates the build and analysis phases with OWASP Dependency Check, Trivy vulnerability scanning, and SonarQube analysis.
+- It handles dependency installation for both the backend and frontend of the application.
+- It concludes by deploying the application to containers, assuming Docker Compose is used for orchestration.
+
+### Notes
+
+- Ensure that the paths (`/root/.jenkins/workspace/Bank/app/backend` and `/root/.jenkins/workspace/Bank/app/frontend`) are correct and accessible based on your Jenkins setup.
+- Adjust `npm install` and other commands as per your project's specific requirements and folder structures.
+
+This Jenkinsfile provides a comprehensive automation pipeline for building, testing dependencies, analyzing vulnerabilities, and deploying a full-stack application.
+
+
+
+
+********************************************************************************************************
+                                                         ***
+********************************************************************************************************
+
 
 
 ![Preview](./screenshots/login.png)
